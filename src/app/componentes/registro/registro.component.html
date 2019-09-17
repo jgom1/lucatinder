@@ -1,54 +1,100 @@
-<div class="input-group mb-4">
-    <input
-        type="text"
-        class="form-control"
-        placeholder="Usuario"
-        aria-label="usuario"
-    />
-</div>
+<form [formGroup]="formulario" (ngSubmit)="registrarUsuario()">
 
-<div class="input-group mb-4">
-    <input
-        type="password"
-        class="form-control border-right-0"
-        placeholder="Contraseña"
-        aria-label="Password"
-        aria-describedby="password-icono"
-    />
-    <div class="input-group-append">
-        <span class="input-group-text bg-transparent border-left-0" id="password-icono"><i class="fas fa-lock"></i></span>
+    <div class="row m-0">
+            <div class="form-group col-6 p-0 pr-2 mb-4">
+                    <label class="small mb-1" for="usuario">Introduce un nombre de usuario</label>
+                    <input
+                        formControlName="usuario"
+                        type="text"
+                        class="form-control"
+                        id="usuario"
+                        placeholder="Usuario"
+                        aria-label="usuario"
+                    />
+                </div>
+                
+                <div class="form-group col-6 p-0 pl-2 mb-4">
+                    <label class="small mb-1" for="correo">Introduce tu correo electrónico</label>
+                    <input
+                        formControlName="correo"
+                        type="text"
+                        class="form-control"
+                        id="correo"
+                        placeholder="Correo electrónico"
+                        aria-label="correo"
+                    />
+                </div>
+    </div>
+
+    <div class="row m-0">
+<div class="form-group col-6 p-0 pr-2  mb-4">
+        <label class="small mb-1" for="password">Introduce una contraseña</label>
+        <div class="input-group">
+                <input
+                formControlName="password"
+                type="password"
+                class="form-control border-right-0"
+                id="password"
+                placeholder="Contraseña"
+                aria-label="Password"
+                aria-describedby="password-icono"
+            />
+            <div class="input-group-append">
+                <span class="input-group-text bg-transparent border-left-0" id="password-icono"><i class="fas fa-lock"></i></span>
+            </div>
+        </div>
+    </div>
+
+<div class="form-group col-6 p-0 pl-2 mb-4">
+    <label class="small mb-1" for="password2">Repite la contraseña</label>
+    <div class="input-group">
+            <input
+            formControlName="password2"
+            type="password"
+            class="form-control border-right-0"
+            id="password2"
+            placeholder="Contraseña 2"
+            aria-label="Password2"
+            aria-describedby="password2-icono"
+        />
+        <div class="input-group-append">
+            <span class="input-group-text bg-transparent border-left-0" id="password2-icono"><i class="fas fa-lock"></i></span>
+        </div>
     </div>
 </div>
-
-<div class="input-group mb-4">
-    <input
-        type="password"
-        class="form-control border-right-0"
-        placeholder="Contraseña 2"
-        aria-label="Password2"
-        aria-describedby="password2-icono"
-    />
-    <div class="input-group-append">
-        <span class="input-group-text bg-transparent border-left-0" id="password2-icono"><i class="fas fa-lock"></i></span>
-    </div>
 </div>
+
+
 
 <div class="row m-0 mb-4">
-        <div class="form-check p-0 pr-2 col-6">
-                <input class="form-check-input d-none" type="radio" name="sexo_hombre" id="sexo_hombre" value="1">
-                <label class="form-check-label col-12 p-0" for="sexo_hombre">
-                  <span class="btn btn btn-outline-dark btn-block">Hombre</span>
-                </label>
-        </div>
-
-        <div class="form-check p-0 pl-2 col-6">
-                <input class="form-check-input d-none" type="radio" name="sexo_mujer" id="sexo_mujer" value="0">
-                <label class="form-check-label col-12 p-0" for="sexo_mujer">
-                        <span class="btn btn btn-outline-dark btn-block">Mujer</span>
-                </label>
-        </div>
+        <div class="form-group col-4 p-0 pr-2">
+                <label class="small mb-1" for="nacimiento">Fecha de nacimiento</label>
+                <input
+                formControlName="nacimiento"
+                type="date"
+                class="form-control"
+                id="nacimiento"
+                aria-label="nacimiento"
+                />
+            </div>
+    <div class="form-group p-0 pl-1 pr-1 col-4">
+        <label class="small mb-1" for="sexo">Soy</label>
+        <select formControlName="sexo" class="form-control" id="sexo">
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+        </select>
+    </div>
+    <div class="form-group p-0 pl-2 col-4">
+        <label class="small mb-1" for="sexo">Me interesan</label>
+        <select formControlName="preferencia" class="form-control" id="sexo">
+            <option value="H">Hombres</option>
+            <option value="M">Mujeres</option>
+        </select>
+    </div>
 </div>
 
 <div class="text-center">
-    <input type="submit" class="btn btn btn-dark col-6" value="Registrarme"/>
+    <input type="submit" class="btn btn btn-dark col-6" value="Quiero registrarme"/>
 </div>
+
+</form>

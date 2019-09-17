@@ -1,0 +1,14 @@
+<div class="d-flex flex-wrap">
+  <div class="col-3 m-0 p-3" *ngFor="let perfil of perfiles">
+    <a href="#" class="perfil">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/jgom1/lucatinder/master/src/assets/img/lucatinder-silueta-hombre.png" class="card-img-top" alt="Imagen perfil {{ perfil.nombre }}">
+        <div class="card-body row m-0">
+          <p class="h3 p-0 col-6 text-left">{{ perfil.nombre }}</p>
+          <p class="h3 p-0 col-6 text-right">{{ obtenerEdad(perfil.nacimiento) }} años</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+  
